@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_cad_bebidas"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background"
+    tools:context="vandin.nossocasanossobar.activities.CadBebidaActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cadastro de Bebidas"
+        android:id="@+id/cadBebida"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffffff"
+        android:textSize="34sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nome:"
+        android:id="@+id/nome"
+        android:layout_below="@+id/cadCliente"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="100dp"
+        android:textColor="#ffffff"
+        android:textSize="32sp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text=""
+        android:hint="Digite o nome da bebida..."
+        android:ems="10"
+        android:id="@+id/txtNome"
+        android:textSize="24sp"
+        android:background="#ffffff"
+        android:layout_below="@+id/nome"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Preço:"
+        android:id="@+id/preco"
+        android:textColor="#ffffff"
+        android:textSize="32sp"
+        android:layout_below="@+id/nome"
+        android:layout_marginTop="50dp"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" Voltar"
+        android:id="@+id/btVoltar"
+        android:drawableLeft="@drawable/back"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" Cadastrar"
+        android:id="@+id/btCadastrar"
+        android:drawableLeft="@drawable/add_drink"
+        android:layout_below="@+id/txtPreco"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="27dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="R$"
+        android:id="@+id/real"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:layout_above="@+id/btCadastrar"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/preco" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:text=""
+        android:ems="10"
+        android:id="@+id/txtPreco"
+        android:textSize="24sp"
+        android:background="#ffffff"
+        android:layout_below="@+id/preco"
+        android:layout_alignEnd="@+id/btCadastrar"
+        android:layout_toEndOf="@id/real"
+        android:layout_marginLeft="10dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" Editar"
+        android:id="@+id/btEditar"
+        android:drawableLeft="@drawable/edit_drink"
+        android:layout_alignBaseline="@+id/btCadastrar"
+        android:layout_alignBottom="@+id/btCadastrar"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>
