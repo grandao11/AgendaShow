@@ -1,5 +1,17 @@
 package br.com.gustavo.agendashow.activities;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import br.com.gustavo.agendashow.R;
+import br.com.gustavo.agendashow.model.CidadeDao;
+import br.com.gustavo.agendashow.pojo.Cidade;
+
 /**
  * Created by Gustavo on 17/11/2016.
  */
@@ -17,17 +29,17 @@ public class CadCidadeActivity extends AppCompatActivity {
 
         txtNome = (EditText)findViewById(R.id.txtNome);
         txtBairro = (EditText)findViewById(R.id.txtBairro);
-        btCadastrar = (Button)findViewById(R.id.btCadastrar);
-        btEditar = (Button) findViewById(R.id.btEditar);
-        btVoltar = (Button)findViewById(R.id.btVoltar);
+        btnCadastrar = (Button)findViewById(R.id.btCadastrar);
+        btnEditar = (Button) findViewById(R.id.btEditar);
+        btnVoltar = (Button)findViewById(R.id.btVoltar);
 
         cidade = new Cidade();
         cidade = CidadeDao.getInstance(this.getApplicationContext());
 
         Intent intent = getIntent();
-        final long id_cidade = it.getLongExtra("id_cidade", -1);
-        String nome_cidade = it.getStringExtra("nome_cidade");
-        String bairro_cidade = it.getStringExtra("bairro_cidade");
+        final long id_cidade = intent.getLongExtra("id_cidade", -1);
+        String nome_cidade = intent.getStringExtra("nome_cidade");
+        String bairro_cidade = intent.getStringExtra("bairro_cidade");
 
         txtNome.setText(nome_cidade);
         txtBairro.setText(bairro_cidade);

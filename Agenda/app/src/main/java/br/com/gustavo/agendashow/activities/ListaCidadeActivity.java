@@ -1,5 +1,21 @@
 package br.com.gustavo.agendashow.activities;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import java.util.List;
+
+import br.com.gustavo.agendashow.R;
+import br.com.gustavo.agendashow.adapter.ListaCidadeAdapter;
+import br.com.gustavo.agendashow.model.CidadeDao;
+import br.com.gustavo.agendashow.pojo.Cidade;
+
 /**
  * Created by Gustavo on 17/11/2016.
  */
@@ -28,7 +44,7 @@ public class ListaCidadeActivity extends AppCompatActivity {
             listaCidade.setAdapter(new ListaCidadeAdapter(this, cidadeCadastrada));
         }
 
-        btCadastrar.setOnClickListener(new View.OnClickListener() {
+        btnCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ListaCidadeActivity.this, CadCidadeActivity.class);
@@ -58,14 +74,14 @@ public class ListaCidadeActivity extends AppCompatActivity {
                 String nome_cidade = cidade.getNome();
                 String bairro_cidade = cidade.getBairro();
                 Intent intent = new Intent(ListaCidadeActivity.this, CadCidadeActivity.class);
-                intent.putExtra("id_cidade", aperitivo.getId_cidade());
+                intent.putExtra("id_cidade", cidade.getId_cidade());
                 intent.putExtra("nome_cidade", nome_cidade);
                 intent.putExtra("bairro_cidade", bairro_cidade);
                 startActivity(intent);
             }
         });
 
-        btVoltar.setOnClickListener(new View.OnClickListener() {
+        btnVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ListaCidadeActivity.this, HomeActivity.class);

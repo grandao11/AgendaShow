@@ -108,7 +108,7 @@ public class CidadeDao extends Dao {
 
         public CidadeUri(){}
 
-        public static final String AUTHORITY = "gustavo.agendashow.provider/cidade";
+        public static final String AUTHORITY = "br.com.gustavo.agendashow.provider/cidade";
         public static final Uri CONTEXT_URI = Uri.parse("content://" + AUTHORITY);
         public static final String CONTENT_TYPE = "vnd.android.cursor.dir/vnd.google.cidade";
         public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/vnd.google.cidade";

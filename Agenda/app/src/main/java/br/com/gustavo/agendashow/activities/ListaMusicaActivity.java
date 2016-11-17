@@ -1,12 +1,28 @@
 package br.com.gustavo.agendashow.activities;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import java.util.List;
+
+import br.com.gustavo.agendashow.R;
+import br.com.gustavo.agendashow.adapter.ListaMusicaAdapter;
+import br.com.gustavo.agendashow.model.MusicaDao;
+import br.com.gustavo.agendashow.pojo.Musica;
+
 /**
  * Created by Gustavo on 17/11/2016.
  */
 public class ListaMusicaActivity extends AppCompatActivity {
 
     private Button btnCadastrar, btnVoltar;
-    private ListView listaBebidas;
+    private ListView listaMusica;
     private Musica musica;
     private MusicaDao musicaDao;
 
@@ -56,7 +72,7 @@ public class ListaMusicaActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Musica musica = (Musica) parent.getItemAtPosition(position);
                 String nome_musica = musica.getNome();
-                String preco_musica = musica.getPreco();
+                String comentario_musica = musica.getComentario();
                 Intent intent = new Intent(ListaMusicaActivity.this, CadMusicaActivity.class);
                 intent.putExtra("id_musica", musica.getId_musica());
                 intent.putExtra("nome_musica", nome_musica);

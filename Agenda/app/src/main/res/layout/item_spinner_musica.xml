@@ -7,10 +7,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/itemTxtNome"
-        android:text="NOME DA CIDADE"
+        android:text="NOME DA MUSICA"
         android:textSize="18sp"
         android:textColor="@android:color/white" />
-
-
 
 </LinearLayout>

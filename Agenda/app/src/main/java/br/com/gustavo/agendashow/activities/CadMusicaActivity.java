@@ -1,12 +1,24 @@
 package br.com.gustavo.agendashow.activities;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import br.com.gustavo.agendashow.R;
+import br.com.gustavo.agendashow.model.MusicaDao;
+import br.com.gustavo.agendashow.pojo.Musica;
+
 /**
  * Created by Gustavo on 17/11/2016.
  */
 public class CadMusicaActivity extends AppCompatActivity {
 
     private EditText txtNome, txtComentario;
-    private Button btCadastrar, btnEditar, btnVoltar;
+    private Button btnCadastrar, btnEditar, btnVoltar;
     private Musica musica;
     private MusicaDao musicaDao;
 
@@ -25,9 +37,9 @@ public class CadMusicaActivity extends AppCompatActivity {
         musicaDao = MusicaDao.getInstance(this.getApplicationContext());
 
         Intent intent = getIntent();
-        final long id_musica = it.getLongExtra("id_musica", -1);
-        String nome_musica = it.getStringExtra("nome_musica");
-        String comentario_musica = it.getStringExtra("comentario_musica");
+        final long id_musica = intent.getLongExtra("id_musica", -1);
+        String nome_musica = intent.getStringExtra("nome_musica");
+        String comentario_musica = intent.getStringExtra("comentario_musica");
 
         txtComentario.setText(comentario_musica);
 
