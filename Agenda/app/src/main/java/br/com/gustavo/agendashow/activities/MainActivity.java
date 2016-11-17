@@ -21,7 +21,7 @@ import br.com.gustavo.agendashow.R;
 public class MainActivity extends AppCompatActivity {
 
     EditText txtNome, txtSenha;
-    Button btnLogin;
+    Button btnEntrar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +30,9 @@ public class MainActivity extends AppCompatActivity {
 
         txtNome = (EditText) findViewById(R.id.txtNome);
         txtSenha = (EditText) findViewById(R.id.txtSenha);
-        btnLogin = (Button) findViewById(R.id.btLogin);
+        btnEntrar = (Button) findViewById(R.id.btnEntrar);
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
+        btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String senha = txtSenha.getText().toString();

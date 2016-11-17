@@ -31,10 +31,10 @@ public class CadCidadeActivity extends AppCompatActivity {
         txtBairro = (EditText)findViewById(R.id.txtBairro);
         btnCadastrar = (Button)findViewById(R.id.btCadastrar);
         btnEditar = (Button) findViewById(R.id.btEditar);
-        btnVoltar = (Button)findViewById(R.id.btVoltar);
+        btnVoltar = (Button)findViewById(R.id.btnVoltar);
 
         cidade = new Cidade();
-        cidade = CidadeDao.getInstance(this.getApplicationContext());
+        cidadeDao = CidadeDao.getInstance(this.getApplicationContext());
 
         Intent intent = getIntent();
         final long id_cidade = intent.getLongExtra("id_cidade", -1);

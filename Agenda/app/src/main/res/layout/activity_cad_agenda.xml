@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_cad_cidade"
+    android:id="@+id/activity_cad_agenda"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/btn_cidade"
-    tools:context="br.com.gustavo.agendashow.activities.CadCidadeActivity">
+    tools:context="br.com.gustavo.agendashow.activities.CadAgendaActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cadastro de Cidades"
-        android:id="@+id/cadAperitivo"
+        android:text="Cadastro da Agenda"
+        android:id="@+id/cadAgenda"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:textColor="#ffffff"
@@ -24,36 +23,21 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nome:"
-        android:id="@+id/nome"
-        android:layout_below="@+id/cadCidade"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="100dp"
+        android:text="Musica:"
+        android:id="@+id/musica"
         android:textColor="#ffffff"
-        android:textSize="32sp" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text=""
-        android:hint="Digite o nome da cidade"
-        android:ems="10"
-        android:id="@+id/txtNome"
-        android:textSize="24sp"
-        android:background="#ffffff"
-        android:layout_below="@+id/nome"
-        android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/cadCidade" />
+        android:textSize="32sp"
+        android:layout_marginTop="50dp"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bairro:"
-        android:id="@+id/bairro"
+        android:text="Cidade:"
+        android:id="@+id/cidade"
         android:textColor="#ffffff"
         android:textSize="32sp"
-        android:layout_below="@+id/nome"
+        android:layout_below="@+id/cidade"
         android:layout_marginTop="50dp"
         android:layout_alignParentStart="true" />
 
@@ -66,40 +50,25 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"/>
 
-    <Button
+    <Spinner
+        android:id="@+id/SpMusica"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=" Cadastrar"
-        android:id="@+id/btCadastrar"
-        android:drawableLeft="@drawable/cadastrar"
-        android:layout_below="@+id/txtPreco"
+        android:layout_below="@+id/musica"
+        android:popupBackground="@android:drawable/progress_horizontal"
+        android:background="@android:drawable/screen_background_light_transparent"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="27dp" />
+        android:layout_alignParentEnd="true" />
 
-    <TextView
+    <Spinner
+        android:id="@+id/SpCidade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bairro"
-        android:id="@+id/bairro"
-        android:textColor="#ffffff"
-        android:textSize="20sp"
-        android:layout_above="@+id/btnCadastrar"
+        android:layout_below="@+id/cidade"
+        android:popupBackground="@android:drawable/progress_horizontal"
+        android:background="@android:drawable/screen_background_light_transparent"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/bairro" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:text=""
-        android:ems="10"
-        android:id="@+id/txtBairro"
-        android:textSize="24sp"
-        android:background="#ffffff"
-        android:layout_below="@+id/bairro"
-        android:layout_alignEnd="@+id/btnCadastrar"
-        android:layout_toEndOf="@id/bairro"
-        android:layout_marginLeft="10dp" />
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -111,5 +80,12 @@
         android:layout_alignBottom="@+id/btnCadastrar"
         android:layout_alignParentEnd="true" />
 
-
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cadastrar"
+        android:id="@+id/btnCadastrar"
+        android:drawableLeft="@drawable/cadastrar"
+        android:layout_above="@+id/btnVoltar"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
