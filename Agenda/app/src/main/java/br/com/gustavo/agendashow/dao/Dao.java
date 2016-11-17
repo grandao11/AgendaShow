@@ -1,5 +1,11 @@
 package br.com.gustavo.agendashow.dao;
 
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
+
 /**
  * Created by Gustavo on 17/11/2016.
  */

@@ -1,5 +1,16 @@
 package br.com.gustavo.agendashow.adapter;
 
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.TextView;
+
+import java.util.List;
+
+import br.com.gustavo.agendashow.pojo.Musica;
+
 /**
  * Created by Gustavo on 17/11/2016.
  */
@@ -8,7 +19,7 @@ public class SpinnerMusicaAdapter extends BaseAdapter {
     private Context context;
     private List<Musica> lista;
 
-    public SpinnerMusicaAdapter(Context ctx, List<Bebida> list) {
+    public SpinnerMusicaAdapter(Context ctx, List<Musica> list) {
         this.context = ctx;
         this.lista = list;
     }

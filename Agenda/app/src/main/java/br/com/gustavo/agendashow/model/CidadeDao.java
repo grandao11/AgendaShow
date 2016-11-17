@@ -1,5 +1,19 @@
 package br.com.gustavo.agendashow.model;
 
+import android.content.ContentUris;
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.net.Uri;
+import android.provider.BaseColumns;
+import android.util.Log;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import br.com.gustavo.agendashow.pojo.Cidade;
+import br.com.gustavo.agendashow.dao.Dao;
+
 /**
  * Created by Gustavo on 17/11/2016.
  */
@@ -94,7 +108,7 @@ public class CidadeDao extends Dao {
 
         public CidadeUri(){}
 
-        public static final String AUTHORITY = "vandin.nossocasanossobar.provider/cidade";
+        public static final String AUTHORITY = "gustavo.agendashow.provider/cidade";
         public static final Uri CONTEXT_URI = Uri.parse("content://" + AUTHORITY);
         public static final String CONTENT_TYPE = "vnd.android.cursor.dir/vnd.google.cidade";
         public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/vnd.google.cidade";

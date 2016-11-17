@@ -1,5 +1,17 @@
 package br.com.gustavo.agendashow.adapter;
 
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.TextView;
+
+import java.util.List;
+
+import br.com.gustavo.agendashow.R;
+import br.com.gustavo.agendashow.pojo.Cidade;
+
 /**
  * Created by Gustavo on 17/11/2016.
  */

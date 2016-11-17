@@ -1,5 +1,19 @@
 package br.com.gustavo.agendashow.model;
 
+import android.content.ContentUris;
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.net.Uri;
+import android.provider.BaseColumns;
+import android.util.Log;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import br.com.gustavo.agendashow.dao.Dao;
+import br.com.gustavo.agendashow.pojo.Musica;
+
 /**
  * Created by Gustavo on 17/11/2016.
  */
@@ -7,7 +21,7 @@ public class MusicaDao extends Dao {
 
     private static MusicaDao mInstance = null;
 
-    private BebidaDao(Context ctx, String tabela, String[] colunas) {
+    private MusicaDao(Context ctx, String tabela, String[] colunas) {
         super(ctx, tabela, colunas);
     }
 
@@ -76,9 +90,9 @@ public class MusicaDao extends Dao {
 
                 do {
                     Musica musica = new Musica();
-                    bebida.setId_musica(c.getLong(idx_idMusica));
-                    bebida.setNome(c.getString(idx_nome));
-                    bebida.setComentario(c.getString(idx_comentario));
+                    musica.setId_musica(c.getLong(idx_idMusica));
+                    musica.setNome(c.getString(idx_nome));
+                    musica.setComentario(c.getString(idx_comentario));
                     listagem.add(musica);
 
                 } while (c.moveToNext());
@@ -90,18 +104,20 @@ public class MusicaDao extends Dao {
         return listagem;
     }
 
-    public static final classMusicaUri implements BaseColumns {
+    public static final classMusicaUri implements BaseColumns
+
+    {
 
         public MusicaUri(){}
 
-        public static final String AUTHORITY = "vandin.nossocasanossobar.provider/musica";
+        public static final String AUTHORITY = "gustavo.agendashow.provider/musica";
         public static final Uri CONTEXT_URI = Uri.parse("content://" + AUTHORITY);
         public static final String CONTENT_TYPE = "vnd.android.cursor.dir/vnd.google.musica";
         public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/vnd.google.musica";
 
         public static final String _ID = "id_musica";
         public static final String _NOME = "nome";
-        public static final String _PRECO = "comentario";
+        public static final String _COMENTARIO = "comentario";
 
     public static Uri getUriId(long id) {
         Uri uri = ContentUris.withAppendedId(CONTEXT_URI, id);
