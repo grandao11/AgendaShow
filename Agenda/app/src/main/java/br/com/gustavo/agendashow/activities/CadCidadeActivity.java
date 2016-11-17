@@ -30,7 +30,7 @@ public class CadCidadeActivity extends AppCompatActivity {
         txtNome = (EditText)findViewById(R.id.txtNome);
         txtBairro = (EditText)findViewById(R.id.txtBairro);
         btnCadastrar = (Button)findViewById(R.id.btCadastrar);
-        btnEditar = (Button) findViewById(R.id.btEditar);
+        btnEditar = (Button) findViewById(R.id.btnEditar);
         btnVoltar = (Button)findViewById(R.id.btnVoltar);
 
         cidade = new Cidade();

@@ -18,7 +18,6 @@ import br.com.gustavo.agendashow.pojo.Musica;
  * Created by Gustavo on 17/11/2016.
  */
 public class MusicaDao extends Dao {
-
     private static MusicaDao mInstance = null;
 
     private MusicaDao(Context ctx, String tabela, String[] colunas) {
@@ -32,7 +31,7 @@ public class MusicaDao extends Dao {
                     MusicaUri._NOME,
                     MusicaUri._COMENTARIO
             };
-            mInstance = new MusicaDao(ctx, "musica", colunas);
+            mInstance = new MusicaDao(ctx, "bebidas", colunas);
         }
         return mInstance;
     }
@@ -84,9 +83,9 @@ public class MusicaDao extends Dao {
             if (c.moveToFirst()) {
                 listagem = new ArrayList<Musica>();
 
-                int idx_idMusica     = c.getColumnIndex(MusicaUri._ID);
-                int idx_nome         = c.getColumnIndex(MusicaUri._NOME);
-                int idx_comentario   = c.getColumnIndex(MusicaUri._COMENTARIO);
+                int idx_idMusica   = c.getColumnIndex(MusicaUri._ID);
+                int idx_nome        = c.getColumnIndex(MusicaUri._NOME);
+                int idx_comentario       = c.getColumnIndex(MusicaUri._COMENTARIO);
 
                 do {
                     Musica musica = new Musica();
@@ -99,31 +98,30 @@ public class MusicaDao extends Dao {
             }
 
         } catch (Exception e) {
-            Log.e("Erro", "Erro ao listar musica: " + e.getMessage());
+            Log.e("Erro", "Erro ao listar os bebidas: " + e.getMessage());
         }
         return listagem;
     }
 
-    public static final classMusicaUri implements BaseColumns
-
-    {
+    public static final class MusicaUri implements BaseColumns {
 
         public MusicaUri(){}
 
-        public static final String AUTHORITY = "br.com.gustavo.agendashow.provider/musica";
+        public static final String AUTHORITY = "br.com.gustavo.agendashow.provider/comentario";
         public static final Uri CONTEXT_URI = Uri.parse("content://" + AUTHORITY);
-        public static final String CONTENT_TYPE = "vnd.android.cursor.dir/vnd.google.musica";
-        public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/vnd.google.musica";
+        public static final String CONTENT_TYPE = "vnd.android.cursor.dir/vnd.google.comentario";
+        public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/vnd.google.comentario";
 
-        public static final String _ID = "id_musica";
+        public static final String _ID = "id_comentario";
         public static final String _NOME = "nome";
         public static final String _COMENTARIO = "comentario";
 
-    public static Uri getUriId(long id) {
-        Uri uri = ContentUris.withAppendedId(CONTEXT_URI, id);
-        return uri;
+        public static Uri getUriId(long id) {
+            Uri uri = ContentUris.withAppendedId(CONTEXT_URI, id);
+            return uri;
+        }
+
     }
+}
 
 
-}
-}

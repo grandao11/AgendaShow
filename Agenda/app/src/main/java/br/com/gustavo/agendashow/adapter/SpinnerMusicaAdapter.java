@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import br.com.gustavo.agendashow.R;
 import br.com.gustavo.agendashow.pojo.Musica;
 
 /**
